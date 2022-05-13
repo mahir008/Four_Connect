@@ -61,7 +61,7 @@ game_over = False
 turn = 0
 
 while not game_over:
-	#ask p1
+	#asking player 1
 	if turn == 0:
 		col = int(input("P1 make selection (0-6):"))
 
@@ -75,7 +75,7 @@ while not game_over:
 
 
 
-	#ask p2
+	#asking player 2
 	else:
 		col = int(input("P2 make selection (0-6):"))
 
