@@ -1,32 +1,32 @@
-import numpy as np
-import random
-import pygame
-import sys
-import math
+import numpy as np #python library for matrix array
+import random #uniform selection for range
+import pygame #python game library
+import sys #system-specific parameters and functions
+import math #import math  give access to the mathematical functions
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255) #board
+BLACK = (0, 0, 0)  #background
+RED = (255, 0, 0) #piece player_1
+YELLOW = (255, 255, 0) #piece player 2
 
 no_of_rows = 6
 no_of_columns = 7
 
 
-def board_create():
+def board_create(): #creating board
     board = np.zeros((no_of_rows, no_of_columns))
     return board
 
 
-def piece_drop(board, row, col, piece):
+def piece_drop(board, row, col, piece): #creating the the circular pieces to be dropped
     board[row][col] = piece
 
 
-def is_valid_location(board, col):
+def is_valid_location(board, col): #checking to see if the pieces dropped by player is in a valid location
     return board[no_of_rows - 1][col] == 0
 
 
-def next_open_row(board, col):
+def next_open_row(board, col): #checking the next no of rows to be dropped
     for r in range(no_of_rows):
         if board[r][col] == 0:
             return r
@@ -35,16 +35,16 @@ def next_open_row(board, col):
 def print_board(board):
     print(np.flip(board, 0))
 
-
+#checking win locations
 def winner_move(board, piece):
-    # Check horizontal locations for win
+    # Checking  horizontal locations for to win the game
     for c in range(no_of_columns - 3):
         for r in range(no_of_rows):
             if board[r][c] == piece and board[r][c + 1] == piece and board[r][c + 2] == piece and board[r][
                 c + 3] == piece:
                 return True
 
-    # Check vertical locations for win
+    # Checking vertical locations for win the game
     for c in range(no_of_columns):
         for r in range(no_of_rows - 3):
             if board[r][c] == piece and board[r + 1][c] == piece and board[r + 2][c] == piece and board[r + 3][
@@ -66,7 +66,7 @@ def winner_move(board, piece):
                 return True
 
 
-
+#initializting graphical interface  using pygame
 def draw_board(board):
     for c in range(no_of_columns):
         for r in range(no_of_rows):
