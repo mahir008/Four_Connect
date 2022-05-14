@@ -12,7 +12,7 @@ YELLOW = (255, 255, 0)
 no_of_rows = 6
 no_of_columns = 7
 
-PLAYER = 0
+PLAYER = 0 #static variable
 AI = 1
 
 EMPTY = 0

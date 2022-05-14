@@ -1,0 +1,12 @@
+installation requirement :
+import numpy as np #python library for matrix array
+import random #uniform selection for range
+import pygame #python game library
+import sys #system-specific parameters and functions
+import math #import math  give access to the mathematical functions
+
+References for solving:
+
+https://www.youtube.com/watch?v=MMLtza3CZFM
+
+https://en.wikipedia.org/wiki/Connect_Four
