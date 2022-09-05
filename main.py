@@ -9,7 +9,7 @@ BLACK = (0, 0, 0)  #background
 RED = (255, 0, 0) #piece player_1
 YELLOW = (255, 255, 0) #piece player 2
 
-no_of_rows = 6
+no_of_rows = 5
 no_of_columns = 7
 
 
